@@ -14,3 +14,12 @@ git commit -m "can add comment in here"  commit is use to save or commit the fil
 git remote add origin Paste Link
 git push origin master 
 --------Now the files are been uploaded-------------
+//How to jump between commits
+git log to all the commits have been done
+git checkout hashcode (hashcode--we will get it from git log) to go the that perticular file before that perticular commit
+git checkout master to come back to the present updated file
+//How to create branch
+git branch Branch_Name this is to create a branch
+git branch to see all the existing branch
+git checkout Branch_Name this is to go to that branch
+git checkout -b Branch_Name this is to create a branch and redirect to the created  branch
