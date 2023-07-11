@@ -1,0 +1,215 @@
+//Question 1
+
+let income = +prompt("Enter your income : "),output = 0;
+
+if(income > 1800000 ){ output = (income / 4);}
+else if(income > 1400000){ output = (0.15 * income);}
+else if(income > 1000000){ output =  (0.1 * income);}
+else if(income > 700000){ output = (income / 20);}
+
+console.log("Your income tax is "+output+"Rs");
+
+//Question 2
+
+//Question 3
+
+let num = prompt("Enter a number : "),sum = 0, product = 1;
+
+for(let i of num){
+sum += (+i);
+product *= (+i); 
+}
+
+console.log((sum + product === (+num))?"Special no.":"Not a Special no.");
+
+//Question 4
+
+let num = prompt("Enter a number : "),sum = 0, product = 1;
+
+for(let i of num){
+sum += (+i);
+product *= (+i); 
+}
+
+console.log((sum === product)?"Spy no.":"Not a Spy no.");
+
+//Question 5
+
+let num = prompt("Enter a number : "),sum = 0;
+
+for(let i of num) sum += (+i);
+
+console.log(((+num)%sum === 0)?"Harshad / Niven no.":"Not a Harshad / Niven no.");
+
+//Question 6
+
+let num = prompt("Enter a number : ");
+
+console.log((num.includes("0"))?"Duck no.":"Not a Duck no."); 
+
+//Question 7
+
+let num = +prompt("Enter a number : "), numsqu = (num**2).toString(), sum = 0;
+
+for(let i of numsqu) sum += (+i);
+
+console.log((sum === num)?"Neon no.":"Not a Neon no.");
+
+//Question 8
+
+let num = prompt("Enter a number : "), numsqu = ((+num)**2).toString(), isSame = true;
+
+for(let i = 0; i < num.length; i++){
+    if(num[num.length - i -1] != numsqu[numsqu.length - i -1]) isSame = false;
+}
+
+console.log((isSame)?"Automorphic no.":"Not a Automorphic no. ");
+
+//Question 9
+
+let num = prompt("Enter the numbers : ").replace(/ /g, ""),arr = [];
+
+for(let i = 0; i < num.length - 1; i++){
+    let max = min = 0;
+    for(let j = i + 1; j < num.length; j++){
+        (+(num[i]) > +(num[j]))? min += +num[j]: max += +num[j]; 
+    }
+    arr.push(max * min);
+}
+
+arr.push(0);
+console.log("Output : "+arr)
+
+//Question 10
+
+let string = "+-------------------";
+let name = prompt("Enter name : ");
+let nl = name.length;
+let contact = prompt("Enter contact no. : ");
+let cl = contact.length;
+let address = prompt("Enter address : ");
+let al = address.length;
+let meter = prompt("Enter meter no. : ");
+let ml = meter.length;
+let oldReading = Math.floor(Math.random()*1200)+"(units)"
+let ol = oldReading.length;
+let reading = +prompt("Enter current reading : ");
+let meterRent =  "50(₹)";
+let mr = meterRent.length;
+let total = 0;
+
+if(reading < 1){
+    console.log("Wrong Reading Input")
+}else if(1 <= reading && reading < 100){
+    total = (reading * 0.8) + ((reading * 0.8 * 2)/100) + 50;
+}else if(100 <= reading && reading < 300){
+    total = (reading) + ((reading * 5)/100) + 50;
+}else if(300 <= reading && reading < 500){
+    total = (reading * 1.2) + ((reading * 1.2 * 7)/100) + 50;
+}else if(500 <= reading && reading < 800){
+    total = (reading * 2) + ((reading * 2 * 11)/100) + 50;
+}else if(800 <= reading && reading < 1200){
+    total = (reading * 2.5) + ((reading * 2.5 * 15)/100) + 50;
+}else{
+    total = (reading * 3.4) + ((reading * 3.4 * 18)/100) + 50;
+}
+
+reading = reading+"(units)";
+let rl = reading.length;
+total = total+"(₹)";
+tl = total.length;
+
+let max = Math.max(nl,cl,al,ml,ol,rl,tl,mr);
+
+for(let i = 0; i <= max + 1; i++){
+    if(i != max+1){
+        string += "-";
+    }else{
+        string += "+"
+    }
+    if(i === max+1){
+        name += "|"
+    }else if(i > nl - 1){
+        name += " "
+    }
+    if(i === max+1){
+        address += "|"
+    }else if(i > al - 1){
+        address += " "
+    }
+    if(i === max+1){
+        contact += "|"
+    }else if(i > cl - 1){
+        contact += " "
+    }
+    if(i === max+1){
+        meter += "|"
+    }else if(i > ml - 1){
+        meter += " "
+    }
+    if(i === max+1){
+        oldReading += "|"
+    }else if(i > ol - 1){
+        oldReading += " "
+    }
+    if(i === max+1){
+        reading += "|"
+    }else if(i > rl - 1){
+        reading += " "
+    }
+    if(i === max + 1){
+        total += "|"
+    }else if(i > tl - 1){
+        total += " "
+    }
+    if(i === max + 1){
+        meterRent += "|"
+    }else if(i > mr - 1){
+        meterRent += " "
+    }
+}
+
+console.log(string);
+console.log("| Coustomer name  : "+ name);
+console.log("| Contact no.     : "+ contact);
+console.log("| Address         : "+ address);
+console.log("| Meter no.       : "+ meter);
+console.log("| Old reading     : "+ oldReading);
+console.log("| Current reading : "+ reading);
+console.log("| Meter rent      : "+ meterRent);
+console.log("| New reading     : "+ reading);
+console.log(string);
+console.log("| Total           : "+ total);
+console.log(string);
+
+//Question 11
+
+const balanceFruit = (a, m, rs) => (a > m)? rs - (a - m): rs + (m - a);
+
+apple = +prompt("Enter number of Apples : ");
+mangoes = +prompt("Enter number of Mangoes : ");
+rupees = +prompt("Enter amout : ");
+
+console.log("\nOutput : "+balanceFruit(apple,mangoes,rupees));
+
+//Question 12
+
+const countSpecificNumber = (m , n) => {
+    if(m > n)return -1;
+    
+    let count = 0;
+    
+    for(let i = m; i <= n; i++){
+        if(i.toString().includes("2")|| i.toString().includes("3")||
+           i.toString().includes("5")|| i.toString().includes("6")||
+           i.toString().includes("7")|| i.toString().includes("8")||
+           i.toString().includes("0")){ continue }
+        else{ count ++ }
+    }
+    
+    return count;
+}
+
+let result =countSpecificNumber(+prompt("Enter num 1 : "),+prompt("Enter num 2 : "));
+
+console.log("Output : "+result);

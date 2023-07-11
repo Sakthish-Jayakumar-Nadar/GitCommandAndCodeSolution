@@ -1,0 +1,16 @@
+Git Commands
+git --version
+git config --global user.name "Sakthish-Jayakumar-Nadar"
+git config --global user.email "sakthishjayakumarnadar007@gmail.com"
+git config --global --edit (after editing) ESC key :wq
+ctrl + L to clear terminal screen
+git init to initiallize the folder
+ls  to show all the files in the repostory
+ls -a
+git status : status of the repostory
+git add fileName , fileName1 , fileName2
+git add . to add all file at once
+git commit -m "can add comment in here"  commit is use to save or commit the files
+git remote add origin Paste Link
+git push origin master 
+--------Now the files are been uploaded-------------
