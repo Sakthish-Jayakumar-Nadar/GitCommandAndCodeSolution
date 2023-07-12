@@ -23,3 +23,7 @@ git branch Branch_Name this is to create a branch
 git branch to see all the existing branch
 git checkout Branch_Name this is to go to that branch
 git checkout -b Branch_Name this is to create a branch and redirect to the created  branch
+git merge Branch_Name this is to merger the content of the Branch_Name to the current branch
+.gitignore file is made which is ingnored by the git and do not commits
+git clone paste the https link of github this will download all the file of the branch in the github
+git pull to get the updated file
